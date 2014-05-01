@@ -1,6 +1,6 @@
-# silverstripe-guestbook #
+# silverstripe-bootstrap-guestbook #
 
-SilverStripe 3.1 Guestbook module.
+SilverStripe 3.1 Guestbook module with Bootstrap.
 
 ## Features ##
 

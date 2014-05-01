@@ -6,3 +6,7 @@ var Guestbook = {
 		field.focus();
 	}
 };
+
+$('#guestbookFormPanel').on('click', function() {
+	console.log("test");
+})

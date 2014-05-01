@@ -1,0 +1,47 @@
+de:
+  GuestbookEntryAdmin:
+    MENUTITLE: 'Mein Gästebuch'
+  GuestbookPage:
+    SINGULARNAME: "Gästebuch"
+    PLURALNAME: "Gästebücher"
+    ENTRIESPERPAGEERROR: 'EntriesPerPage muss größer als 0 sein. Eingegeben wurde: {count}.'
+    EntriesPerPage: "Einträge pro Seite"
+    EnableEmoticons: "Emoticons aktivieren"
+    ProtectEmails: "E-Mail Adressen schützen"
+    UseSpamProtection: "SPAM Schutz aktivieren"
+  GuestbookEntry:
+    SINGULARNAME: "Gästebucheintrag"
+    PLURALNAME: "Gästebucheinträge"
+    Guestbook: "Gästebuch"
+    Date: "Datum"
+    Name: "Name"
+    Email: "E-Mail Adresse"
+    Website: "Internetseite"
+    IpAddress: "IP Adresse"
+    Host: "Host"
+    Headline: "Überschrift"
+    Message: "Nachricht"
+    Comment: "Kommentar"
+    FloodLimit: "Spam Schutz: Warten Sie einige Sekunden um einen weiteren Eintrag zu schreiben."
+  GuestbookPage_ss:
+    EMAILPROTECTION: "E-Mail Schutz"
+    EMAILPROTECTIONTEXT: "Füllen Sie das Formular aus, um die E-Mail Adressen anzuzeigen."
+    NOENTRIES: "Das Gästebuch hat bisher keine Einträge. Nehmen Sie sich etwas Zeit und schreiben Sie ein paar Zeileb."
+    EMAIL: "E-Mail Adresse"
+    WEBSITE: "Internetseite"
+    EDIT: "Bearbeiten"
+    COMMENT: "Kommentar [Administrator]:"
+    ENTRIES: "Einträge: <strong>{count}</strong>"
+    NEWENTRY: "Neuer Eintrag"
+  PageControls:
+    PAGES: "Seiten:"
+    PREVIOUS: "Zurück"
+    NEXT: "Vor"
+  GuestbookController:
+    GUESTBOOKMODERATE: 'Gästebucheintrag Bearbeiten'
+    POST: 'Eintragen'
+    INVALIDWEBSITEFORMAT: "Ungültiges Format für Internetseite."
+    FLOODLIMITEXCEEDED: "Sie haben bereits in den letzten {seconds} Sekunden etwas gepostet. Bitte warten Sie."
+    ENTRYSAVED: "Eintrag wurde gespeichert."
+    EMAILPROTECTIONLOGIN: "Sie müssen eingeloggt sein, um die E-Mail Adressen zu sehen."
+    EMAILPROTECTIONUNLOCKED: 'E-Mail Adressen erfolgreich entsperrt.'

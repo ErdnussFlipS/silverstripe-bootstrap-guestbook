@@ -22,7 +22,13 @@ class Smiley extends ViewableData {
 	}
 
 	public static function getSmileyDir() {
-		$smileyDir = Director::makeRelative(realpath(dirname(__FILE__) . "/../images/smileys/"));
+		// return dirname();
+		// $realpath = realpath(dirname(__FILE__));
+		// if (is_link($link = dirname(__FILE__))) {
+		// 	$realpath = readlink($link);
+		// }
+
+		$smileyDir = Director::makeRelative(dirname(__FILE__) . "/../images/smileys/");
 		$smileyDir = str_replace("\\", "/", $smileyDir);
 		$smileyDir = Director::baseURL() . $smileyDir;
 		return $smileyDir;

@@ -37,6 +37,7 @@ class GuestbookEntry extends DataObject {
 		'Website' => 'Varchar',
 		'IpAddress' => 'Varchar',
 		'Host' => 'Varchar',
+		'Headline' => 'Varchar',
 		'Message' => 'Text',
 		'Comment' => 'Text'
 	);
@@ -48,13 +49,14 @@ class GuestbookEntry extends DataObject {
 	private static $default_sort = 'Date DESC';
 
 	private static $searchable_fields = array(
-		'Name', 'Email', 'Website', 'Message', 'Comment'
+		'Name', 'Email', 'Website', 'Headline', 'Message', 'Comment'
 	);
 
 	private static $summary_fields = array(
 			'Date',
 			'Name',
 			'Email',
+			'Headline',
 			'Message'
 	   );
 
@@ -127,6 +129,7 @@ class GuestbookEntry extends DataObject {
 		$fields->addFieldToTab("Root.Main", new TextField("Website", $labels["Website"]));
 		$fields->addFieldToTab("Root.Main", new ReadonlyField("IpAddress", $labels["IpAddress"]));
 		$fields->addFieldToTab("Root.Main", new ReadonlyField("Host", $labels["Host"]));
+		$fields->addFieldToTab("Root.Main", new TextField("Headline", $labels["Headline"]));
 		$fields->addFieldToTab("Root.Main", new TextareaField("Message", $labels["Message"]));
 		$fields->addFieldToTab("Root.Main", new TextareaField("Comment", $labels["Comment"]));
 		return $fields;
@@ -135,7 +138,7 @@ class GuestbookEntry extends DataObject {
 	public function EditLink() {
 		$id = $this->ID;
 		return Director::baseURL() .
-				"/admin/guestbook/GuestbookEntry/EditForm/field/GuestbookEntry/item/$id/edit";
+				"admin/guestbook/GuestbookEntry/EditForm/field/GuestbookEntry/item/$id/edit";
 	}
 
 	public function EmailURL() {
@@ -156,6 +159,7 @@ class GuestbookEntry extends DataObject {
 		$labels['Website'] = _t('GuestbookEntry.Website', "Website");
 		$labels['IpAddress'] = _t('GuestbookEntry.IpAddress', "IP address");
 		$labels['Host'] = _t('GuestbookEntry.Host', "Host");
+		$labels['Headline'] = _t('GuestbookEntry.Headline', "Headline");
 		$labels['Message'] = _t('GuestbookEntry.Message', "Message");
 		$labels['Comment'] = _t('GuestbookEntry.Comment', "Comment");
 

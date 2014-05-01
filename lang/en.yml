@@ -19,6 +19,7 @@ en:
     Website: "Website"
     IpAddress: "IP address"
     Host: "Host"
+    Headline: "Headline"
     Message: "Message"
     Comment: "Comment"
     FloodLimit: "Flood protection: Seconds between posts from same IP"

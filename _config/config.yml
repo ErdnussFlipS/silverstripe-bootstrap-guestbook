@@ -1,0 +1,5 @@
+---
+Name: bootstrap-guestbook
+After:
+  - 'bootstrap-forms-v3/*'
+---
