@@ -83,7 +83,7 @@ class GuestbookPage_Controller extends Page_Controller implements PermissionProv
 				(new FormAction('postEntry', _t("GuestbookController.POST", 'Post')))->addExtraClass('btn-block-xs')->setStyle('default')
 		);
 
-		$validator = new RequiredFields('Name', 'Email', 'Headline', 'Message');
+		$validator = new RequiredFields('Name', 'Email', 'Headline', 'Message', 'Captcha');
 
 		$form = new BootstrapForm($this, 'NewEntryForm', $fields, $actions, $validator);
 		$form->setRedirectToFormOnValidationError(true);
@@ -105,23 +105,31 @@ class GuestbookPage_Controller extends Page_Controller implements PermissionProv
 	}
 
 	public function postEntry(array $data, Form $form) {
+		$error = false;
+
 		Session::set('GuestbookFormSubmitted', true);
 
 		if (!empty($data['Name'])) {
 			$form->addErrorMessage('Name', _t('GuestbookController.EMPTYNAME', "Empty Name."), 'bad');
-			return $this->redirectBack();
+			$error = true;
 		}
 
 		if (!empty($data['Website'])) {
 			if (!filter_var($data['Website'], FILTER_VALIDATE_URL)) {
 				$form->addErrorMessage('Website', _t('GuestbookController.INVALIDWEBSITEFORMAT', "Invalid format for website."), 'bad');
-				return $this->redirectBack();
+				$error = true;
 			}
 		}
 
 		if (Session::get("GuestbookPosted") > time() - $this->FloodLimit) {
 			$floodMessage = _t('GuestbookController.FLOODLIMITEXCEEDED', "You have already posted the last {seconds} seconds. Please wait.", "", $this->FloodLimit);
 			$form->sessionMessage($floodMessage, 'bad');
+			$error = true;
+		}
+
+		
+
+		if ($error) {
 			return $this->redirectBack();
 		}
 
